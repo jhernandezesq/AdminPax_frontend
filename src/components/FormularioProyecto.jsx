@@ -541,7 +541,7 @@ const FormularioProyecto = ({tarea}) => {
                     ref={sigCanvas}
                     
                     canvasProps={{
-                        className: "w-100 border-2 min-w-full mb-5"
+                        className: "border-2 w-100  min-w-max mb-5"
                     }} />}
             </div>
 
