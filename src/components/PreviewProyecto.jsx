@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import useAuth from '../hooks/useAuth'
 import { PaperClipIcon } from '@heroicons/react/solid'
 import {formatearFecha} from '../helpers/formatearFecha'
+import {convertTime} from '../helpers/convertTime'
 
 const PreviewProyecto = ({proyecto}) => {
 
@@ -21,7 +22,7 @@ const PreviewProyecto = ({proyecto}) => {
     <p className="flex-1 text-red-500 text-xl "> {orden}
     <span className="text-sm text-gray-500 ml-5">{''}   {nombre}</span>
     
-    <span className="text-sm text-gray-500 ml-20">{''}  Solicitud: {formatearFecha(solicitud_fecha)}</span>
+    <span className="text-sm text-gray-500 ml-20">{''}  Solicitud: {convertTime(solicitud_fecha)}</span>
     </p>
 {auth._id !== creador && (
   <p className="p-1 text-xs rounded-lg text-white bg-green-500 font-bold">Colaborador</p>
