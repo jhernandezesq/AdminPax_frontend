@@ -26,7 +26,7 @@ export default function GeneratePDF({servicios}){
         
         const doc = new jsPDF()
 
-        const imgData = "/src/assets/img/OS.png";
+        const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1655846613/OS_ca23ro.png";
         doc.addImage(imgData, 'JPEG',0,0,210,297, undefined,'FAST');
         console.log(imgData)
 

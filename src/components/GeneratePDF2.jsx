@@ -26,7 +26,7 @@ export default function GeneratePDF2({servicios}){
         
         const doc = new jsPDF('l', 'mm', [210, 105])
 
-        const imgData = "/src/assets/img/SS.png";
+        const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1655846624/SS_clwu9c.png";
         doc.addImage(imgData, 'JPEG',0,0,210,105, undefined,'FAST');
         console.log(imgData)
 
