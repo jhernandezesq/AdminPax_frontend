@@ -4,6 +4,9 @@ import Alerta from '../components/Alerta'
 import clienteAxios from '../config/clienteAxios'
 import useAuth from '../hooks/useAuth'
 import wallpaper from '/src/wall.webp'
+import {paxlogo} from '../assets/pax2.png'
+
+
 
 const Login = () => {
 
@@ -76,7 +79,7 @@ const Login = () => {
                     {/* <span className="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">f</span>
                     <span className="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">G+</span>
                     <span className="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">in</span> */}
-                    <img src="/src/pax2.png" width={170}  className=' items-center justify-center inline-flex rounded-full  ' />
+                    <img src={paxlogo} width={170}  className=' items-center justify-center inline-flex rounded-full  ' />
                 </div>
                 {/* <p className="text-gray-100">
                     or use email your account
