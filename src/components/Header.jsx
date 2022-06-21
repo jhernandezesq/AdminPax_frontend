@@ -5,6 +5,8 @@ import useAuth from '../hooks/useAuth'
 import Busqueda from './Busqueda'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import paxCirculo from '../assets/img/pax-circulo.png'
+import paxlogo from '../assets/img/pax2.png'
 
 
 
@@ -54,12 +56,12 @@ const Header = () => {
               <div className="flex-shrink-0 flex items-center">
                 <img
                   className="block lg:hidden h-8 w-auto"
-                  src="/src/pax2.png"
+                  src={paxlogo}
                   alt="Workflow"
                 />
                 <img
                   className="hidden lg:block h-8 w-auto"
-                  src="/src/pax2.png"
+                  src={paxlogo}
                   alt="Workflow"
                 />
               </div>
@@ -118,7 +120,7 @@ const Header = () => {
                     <span className="sr-only">Open user menu</span>
                     <img
                       className="h-8 w-8 rounded-full"
-                      src="/src/pax-circulo.png"
+                      src={paxCirculo}
                       alt=""
                     />
                   </Menu.Button>

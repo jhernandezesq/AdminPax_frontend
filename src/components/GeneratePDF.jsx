@@ -6,6 +6,7 @@ import { formatearFecha } from '../helpers/formatearFecha'
 
 
 
+
 export default function GeneratePDF({servicios}){
 
 
@@ -25,7 +26,7 @@ export default function GeneratePDF({servicios}){
         
         const doc = new jsPDF()
 
-        const imgData = "/src/OS.png";
+        const imgData = "/src/assets/img/OS.png";
         doc.addImage(imgData, 'JPEG',0,0,210,297, undefined,'FAST');
         console.log(imgData)
 
