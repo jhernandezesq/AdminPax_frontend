@@ -511,7 +511,7 @@ const FormularioProyecto = ({tarea}) => {
                 />
             </div>
 
-<div>
+            <div>
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
             htmlFor='firma_pax'>
                 firma_pax
@@ -525,9 +525,9 @@ const FormularioProyecto = ({tarea}) => {
             />
         </div>
 
-</div>
+        </div>
 
-<div className="grid gap-6 grid-cols-1 ">
+
 
         
 
@@ -541,13 +541,14 @@ const FormularioProyecto = ({tarea}) => {
                     ref={sigCanvas}
                     
                     canvasProps={{
-                        className: "border-2 w-100  min-w-max mb-5"
+                        className: "border-2 mb-5",
+                        width: 800, height: 200,
                     }} />}
             </div>
 
               
 
-     </div>
+    
 
      
 
