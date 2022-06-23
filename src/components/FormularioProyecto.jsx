@@ -161,7 +161,7 @@ const FormularioProyecto = ({tarea}) => {
     
 <div className="max-w-7xl mx-auto bg-white px-16 py-8">
 
-{msg && <Alerta alerta={alerta} />}
+
 
 
 
@@ -297,6 +297,66 @@ const FormularioProyecto = ({tarea}) => {
             onChange={e => setDireccion(e.target.value)}
             />
         </div>
+            {/* colonia */}
+            <div>
+            <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
+            htmlFor='colonia'>
+                Colonia
+            </label>
+            <input 
+            id='colonia'
+            type="text" 
+            className='bg-gray-50 border border-gray-300 text-gray-900 md:text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' 
+            placeholder='colonia'
+            value={colonia}
+            onChange={e => setColonia(e.target.value)}
+            />
+        </div>
+        {/* ciudad */}
+        <div>
+            <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
+            htmlFor='ciudad'>
+                Ciudad
+            </label>
+            <input 
+            id='ciudad'
+            type="text" 
+            className='bg-gray-50 border border-gray-300 text-gray-900 md:text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' 
+            placeholder='ciudad'
+            value={ciudad}
+            onChange={e => setCiudad(e.target.value)}
+            />
+        </div>
+
+
+        <div>
+            <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
+            htmlFor='cp'>
+                Codigo Postal
+            </label>
+            <input 
+            id='cp'
+            type="text" 
+            className='bg-gray-50 border border-gray-300 text-gray-900 md:text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' 
+            placeholder='CP'
+            value={cp}
+            onChange={e => setCp(e.target.value)}
+            />
+        </div>
+        <div>
+            <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
+            htmlFor='estado'>
+                Estado
+            </label>
+            <input 
+            id='estado'
+            type="text" 
+            className='bg-gray-50 border border-gray-300 text-gray-900 md:text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' 
+            placeholder='Estado'
+            value={estado}
+            onChange={e => setEstado(e.target.value)}
+            />
+        </div>
         {/* reporte cliente */}
         <div>
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
@@ -360,66 +420,8 @@ const FormularioProyecto = ({tarea}) => {
 
      <div className="grid gap-6 mb-6 lg:grid-cols-3  mt-10">
 
-                    {/* colonia */}
-        <div>
-            <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
-            htmlFor='colonia'>
-                Colonia
-            </label>
-            <input 
-            id='colonia'
-            type="text" 
-            className='bg-gray-50 border border-gray-300 text-gray-900 md:text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' 
-            placeholder='colonia'
-            value={colonia}
-            onChange={e => setColonia(e.target.value)}
-            />
-        </div>
-        {/* ciudad */}
-        <div>
-            <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
-            htmlFor='ciudad'>
-                Ciudad
-            </label>
-            <input 
-            id='ciudad'
-            type="text" 
-            className='bg-gray-50 border border-gray-300 text-gray-900 md:text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' 
-            placeholder='ciudad'
-            value={ciudad}
-            onChange={e => setCiudad(e.target.value)}
-            />
-        </div>
-
-
-        <div>
-            <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
-            htmlFor='cp'>
-                Codigo Postal
-            </label>
-            <input 
-            id='cp'
-            type="text" 
-            className='bg-gray-50 border border-gray-300 text-gray-900 md:text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' 
-            placeholder='CP'
-            value={cp}
-            onChange={e => setCp(e.target.value)}
-            />
-        </div>
-        <div>
-            <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
-            htmlFor='estado'>
-                Estado
-            </label>
-            <input 
-            id='estado'
-            type="text" 
-            className='bg-gray-50 border border-gray-300 text-gray-900 md:text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' 
-            placeholder='Estado'
-            value={estado}
-            onChange={e => setEstado(e.target.value)}
-            />
-        </div>
+  
+        
 
 
 
@@ -553,8 +555,8 @@ const FormularioProyecto = ({tarea}) => {
      
 
                  
-
-
+            
+            {msg && <Alerta alerta={alerta} />}
                    
 
                     

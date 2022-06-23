@@ -51,6 +51,15 @@ const Resumen = () => {
          <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
           HORA
          </th>
+         <th scope="col" className="  py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
+         TEL
+         </th>
+         <th scope="col" className=" py-3.5 px-5 text-center text-sm font-normal text-slate-700 sm:table-cell">
+         DIRECCION
+         </th>
+         <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
+         COLONIA
+         </th>
  
         </tr>
        </thead>
@@ -66,6 +75,15 @@ const Resumen = () => {
          <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
           {hora}
          </td>
+         <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
+          {tel}
+         </td>
+         <td className="  py-4 px-5 text-sm text-center text-slate-500 sm:table-cell">
+         {direccion}
+         </td>
+         <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
+         {colonia}
+         </td>
         
 
         </tr>
@@ -80,14 +98,20 @@ const Resumen = () => {
        <thead>
         <tr>
          
-         <th scope="col" className="  py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
-         TEL
-         </th>
-         <th scope="col" className=" py-3.5 px-5 text-center text-sm font-normal text-slate-700 sm:table-cell">
-         DIRECCION
+         
+         
+         
+         <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
+         ESTADO
          </th>
          <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
-         REPORTE
+         CIUDAD
+         </th>
+         <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
+         C.P.
+         </th>
+         <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
+         REPORTE CLIENTE
          </th>
          <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
          REPORTO
@@ -102,17 +126,23 @@ const Resumen = () => {
        <tbody>
         <tr className="border-b border-slate-200">
          
+         
+         
+        
          <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-          {tel}
+         {estado}
          </td>
-         <td className="  py-4 px-5 text-sm text-center text-slate-500 sm:table-cell">
-         {direccion}
+         <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
+          {ciudad}
+         </td>
+         <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
+         {cp}
          </td>
          <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
          {reporte_cliente}
          </td>
          <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-          {reporto_sr}
+         {reporto_sr}
          </td>
          <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
          {reportopax_sr}
@@ -196,61 +226,7 @@ const Resumen = () => {
     </div> */}
 
     <div className="p-9">
-     <div className="flex flex-col mx-0 mt-8 ">
-      <table className="min-w-full divide-y divide-slate-500 ">
-       <thead>
-        <tr>
-         
-         <th scope="col" className="  py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
-          Dirección
-         </th>
-         <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
-          Colonia
-         </th>
-         <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
-          Ciudad
-         </th>
-         <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
-          Tel
-         </th>
-         <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
-          Codigo Postal
-         </th>
-         <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
-          Estado
-         </th>
- 
-        </tr>
-       </thead>
-       <tbody>
-        <tr className="border-b border-slate-200">
-         
-         <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-          {direccion}
-         </td>
-         <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-          {colonia}
-         </td>
-         <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-          {ciudad}
-         </td>
-         <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-          {tel}
-         </td>
-         <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-          {cp}
-         </td>
-         <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-          {estado}
-         </td>
-
-        </tr>
-        
-
-       
-       </tbody>
-      </table>
-     </div>
+     
      <div className="flex flex-col mx-0 mt-8 ">
       <table className="min-w-full divide-y divide-slate-500 ">
        <thead>
@@ -263,13 +239,13 @@ const Resumen = () => {
          Hora
          </th>
          <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
-         visita_fecha
+         Visita Fecha
          </th>
          <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
-         hora_entrada
+         Hora Entrada
          </th>
          <th scope="col" className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell">
-         hora_salida
+         Hora Salida
          </th>
          
  

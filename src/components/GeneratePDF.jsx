@@ -61,7 +61,7 @@ export default function GeneratePDF({servicios}){
         doc.text(aSeguimiento, 52, 176, { lineHeightFactor: 2.3 }  )
 
         const mUtilizado = doc.splitTextToSize(`${material_utilizado}`, 145)
-        doc.text(mUtilizado, 52, 195, { lineHeightFactor: 2.3 }  )
+        doc.text(mUtilizado, 52, 195, { lineHeightFactor: 2.3 }  )  
 
         const cCliente = doc.splitTextToSize(`${comentarios_cliente}`, 145)
         doc.text(cCliente, 52, 215, { lineHeightFactor: 2.3 }  )

@@ -24,10 +24,10 @@ export default function GeneratePDF2({servicios}){
 
 
         
-        const doc = new jsPDF('l', 'mm', [210, 105])
+        const doc = new jsPDF('l', 'mm', [210, 112])
 
-        const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1655846624/SS_clwu9c.png";
-        doc.addImage(imgData, 'JPEG',0,0,210,105, undefined,'FAST');
+        const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1655914955/SSv2_iqqdfk.png";
+        doc.addImage(imgData, 'JPEG',0,0,210,112, undefined,'FAST');
         console.log(imgData)
 
         doc.setFontSize(8);
@@ -44,10 +44,15 @@ export default function GeneratePDF2({servicios}){
         doc.setFontSize(8);
         doc.text(40, 57, `${nombre}`);
         doc.text(152, 57, `${tel}`);
-        doc.text(45, 65, `${direccion}`);
-        doc.text(45, 73, `${reporte_cliente}`);
-        doc.text(45, 80, `${reporto_sr}`);
-        doc.text(49, 88, `${reportopax_sr}`);
+        doc.text(40, 65, `${direccion}`);
+        doc.text(130, 73, `${ciudad}`);
+        doc.text(40, 73, `${colonia}`);
+        doc.text(184, 73, `${cp}`);
+        doc.text(40, 80, `${estado}`);
+        doc.text(40, 88, `${reporte_cliente}`);
+        doc.text(40, 96, `${reporto_sr}`);
+        doc.text(40, 104, `${reportopax_sr}`);
+      
 
         doc.setTextColor(255,0,0);
         doc.setFontSize(18);
