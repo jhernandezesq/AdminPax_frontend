@@ -161,7 +161,7 @@ const FormularioProyecto = ({tarea}) => {
   return (
     
     
-<div className="max-w-7xl mx-auto bg-white px-16 py-8">
+<div className="max-w-8xl mx-auto bg-white px-3 py-2">
 
 
 
@@ -405,7 +405,29 @@ const FormularioProyecto = ({tarea}) => {
             />
         </div>
 
+        <div>
+            <label
+            className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'
+            htmlFor='prioridad'
+            >
+                Prioridad
+            </label>
+            
+            <select 
+            id='prioridad'
+            type='text'
+            className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md'
+            value={prioridad}
+            onChange={e => setPrioridad(e.target.value)}
+            >
+                <option value="">-- Seleccionar -- </option>
 
+                {PRIORIDAD.map( opcion => (
+                    <option key={opcion}>{opcion}</option>
+                ))}
+
+            </select>
+        </div>
     
 
 
@@ -549,8 +571,8 @@ const FormularioProyecto = ({tarea}) => {
                     ref={sigCanvas}
                     
                     canvasProps={{
-                        className: "border-2 mb-5",
-                        width: 800, height: 200,
+                        className: "border-2 mb-5 w-[310px] h-[200px] md:w-[850px]" ,
+                        /* width: 800, height: 200, */
                     }} />}
             </div>
 
@@ -577,33 +599,9 @@ const FormularioProyecto = ({tarea}) => {
         value={id ? 'Actualizar Servicio' : 'Crear Servicio'}
         className='text-center bg-sky-600 w-full p-3 font-bold text-white rounded cursor-pointer hover:bg-sky-700 transition-colors'></input>
 
-            <div>
-            <label
-            className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300 mt-10'
-            htmlFor='prioridad'
-            >
-                Prioridad
-            </label>
-            
-            <select 
-            id='prioridad'
-            type='text'
-            className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md'
-            value={prioridad}
-            onChange={e => setPrioridad(e.target.value)}
-            >
-                <option value="">-- Seleccionar -- </option>
-
-                {PRIORIDAD.map( opcion => (
-                    <option key={opcion}>{opcion}</option>
-                ))}
-
-            </select>
-        </div>
-
     </form>
 
-    <button onClick={limpiar} className='  bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4  rounded mb-1 2-'>Limpiar Firma</button>
+    <button onClick={limpiar} className='  bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4  rounded '>Limpiar Firma</button>
 
     {/* <div>
     <h1>IMPRESION DE FIRMA PRUEBA</h1>

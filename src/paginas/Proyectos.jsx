@@ -78,8 +78,8 @@ const csvReport = {
       proyecto={proyectos}
       />  */}
 
-            <div className="flex justify-between">
-                  <button className='w-28 rounded-xl bg-green-600 text-white font-semibold py-2 px-5 text-sm  items-center '>
+            <div className="flex justify-center md:justify-between">
+                  <button className='hidden md:block w-28 rounded-xl bg-green-600 text-white font-semibold py-2 px-5 text-sm  items-center '>
                   <CSVLink
                   {...csvReport}
                   >Exp. Excel</CSVLink>
@@ -105,7 +105,7 @@ const csvReport = {
       <div className="mt-10 ">
         {/* SE REMPLAZO EL proyecto POR DATA para QUE FUNCIONARA EL METODO DE FILTRAR */}
         {data.length ? 
-        data.filter(searchingTerm(term)).map(proyecto => (
+        data.filter(searchingTerm(term)).sort((a,b) => a.orden < b.orden ? 1 : -1).map(proyecto => (
           <PreviewProyecto 
           key={proyecto._id}
           proyecto={proyecto}

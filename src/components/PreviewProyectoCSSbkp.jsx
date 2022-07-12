@@ -21,28 +21,25 @@ const PreviewProyecto = ({ proyecto }) => {
 
   return (
     <>
-      <div className="grid gap-3 grid-cols-2 md:grid-cols-3 border-b p-5 bg-white rounded-lg mb-1">
-        
-          
-          <div>
-          <p className="text-red-500 text-xl uppercase">{orden}</p>
-          <span className="text-sm text-gray-500 mr-10 ">{nombre}</span>
-          </div>
+      <div className="border-b p-5 flex  md:flex-row justify-between bg-white rounded-lg mb-1">
+        <div className="flex items-center gap-2">
+          {/* <p className="flex-1 text-red-500 text-xl uppercase"> {_id.slice(19)} */}
+          <p className="flex-1 text-red-500 text-xl uppercase">
+            {" "}
+            {orden}
+            <span className="text-sm text-gray-500 ml-5">
+              {""} {nombre}
+            </span>
+          </p>
 
-          <span className="  text-xs md:text-sm text-gray-500 	">Solicitud: {convertTime(solicitud_fecha)}</span>
-            
-          
-
-          {/* {auth._id !== creador && (
+          {auth._id !== creador && (
             <p className="p-1 text-xs rounded-lg text-white bg-green-500 font-bold">
               Colaborador
             </p>
-          )} */}
-        
-        
-       
+          )}
+        </div>
 
-        <div className="md:col-end-7 col-span-2">
+        <div className="">
           <p
             className={`${
               prioridad === "Completado"
@@ -50,7 +47,7 @@ const PreviewProyecto = ({ proyecto }) => {
                 : prioridad === "Cancelado"
                 ? "bg-red-500"
                 : "bg-gray-500"
-            } text-white px-3 py-1  font-bold text-sm rounded-lg mr-5`}
+            } text-white px-3 py-2  font-bold text-sm rounded-lg mr-5`}
           >
             {prioridad}
           </p>
@@ -61,7 +58,6 @@ const PreviewProyecto = ({ proyecto }) => {
           >
             Ver Proyecto
           </Link>
-
         </div>
       </div>
     </>

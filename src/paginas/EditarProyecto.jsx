@@ -28,7 +28,7 @@ const EditarProyecto = () => {
       
 
     <div className="flex justify-between">
-    <h1 className="font-black text-4xl">
+    <h1 className="font-black text-2xl">
       Editar Proyecto: {proyecto.nombre}
     </h1>
 

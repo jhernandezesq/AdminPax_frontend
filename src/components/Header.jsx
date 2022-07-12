@@ -111,7 +111,7 @@ const Header = () => {
                 <span className="sr-only">View notifications</span>
                 
               </button>
-              <h1 className='text-gray-400 sm:display-none'>Bienvenido: <span className='text-bold '>{auth.nombre}</span></h1>
+              <h1 className='hidden text-gray-400 md:block'>Bienvenido: <span className='text-bold '>{auth.nombre}</span></h1>
 
               {/* Profile dropdown */}
               <Menu as="div" className="ml-3 relative">
