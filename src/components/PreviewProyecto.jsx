@@ -24,7 +24,8 @@ const PreviewProyecto = ({proyecto}) => {
 
 
 <div className="flex items-center gap-2">
-    <p className="flex-1 text-red-500 text-xl uppercase"> {_id.slice(19)}
+    {/* <p className="flex-1 text-red-500 text-xl uppercase"> {_id.slice(19)} */}
+    <p className="flex-1 text-red-500 text-xl uppercase"> {orden}
     <span className="text-sm text-gray-500 ml-5">{''}   {nombre}</span>
     
     <span className="text-sm text-gray-500 ml-20">{''}  Solicitud: {convertTime(solicitud_fecha)}</span>
