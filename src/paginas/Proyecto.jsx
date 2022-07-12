@@ -84,17 +84,22 @@ const Proyecto = () => {
 
 <div className="flex justify-between ">
 <div className="flex  items-center gap-2 text-black hover:text-red-600 mb-5">
-             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+             
+
+             <Link
+             className="bg-orange-500 text-white font-semibold py-2 px-5 text-sm mt-6 inline-flex items-center group hover:bg-rose-800"
+             to={`/proyectos/editar/${params.id}`}
+             >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
              <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
              </svg>
 
-             <Link
-             to={`/proyectos/editar/${params.id}`}
-             >
              EDITAR ORDEN DE SERVICIO
              </Link>
       </div>
-      <button  className='bg-blue-600 text-white font-semibold py-2 px-5 text-sm mt-6 inline-flex items-center group' type="primary" onClick={handleClick}>Eliminar</button>
+     
+     
+      <button  className='bg-red-700 text-white font-semibold py-2 px-5 text-sm mt-6 inline-flex items-center group mb-4 hover:bg-red-900' type="primary" onClick={handleClick}>Eliminar</button>
 </div>
 
 

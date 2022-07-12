@@ -8,7 +8,7 @@ import SignaturePad from 'react-signature-canvas'
 
 const FormularioProyecto = ({tarea}) => {
 
-    const PRIORIDAD = ['En Proceso', 'Completado', 'Cancelado']
+    
 
     const [id, setId] = useState(null)
     const [orden, setOrden] = useState('')
@@ -35,7 +35,6 @@ const FormularioProyecto = ({tarea}) => {
     const [reporto_sr, setReporto_sr] = useState('')
     const [reportopax_sr, setReportopax_sr] = useState('')
     const [fecha_sr, setFecha_sr] = useState('')
-    const [prioridad, setPrioridad] = useState('')
 
 
 
@@ -52,6 +51,10 @@ const FormularioProyecto = ({tarea}) => {
         const firma_cliente = sigCanvas.current.getTrimmedCanvas().toDataURL("image/png");
         setFirma_cliente(firma_cliente);
         previewFiles(firma_cliente)
+    }
+
+    const uploadImage = (files) => {
+        console.log(files[0]);
     }
 
     
@@ -86,7 +89,7 @@ const FormularioProyecto = ({tarea}) => {
             setReporto_sr(proyecto.reporto_sr)
             setReportopax_sr(proyecto.reportopax_sr)
             setFecha_sr(proyecto.fecha_sr)
-            setPrioridad(proyecto.prioridad)
+ 
 
             /* setFechaEntrega(proyecto.fechaEntrega?.split('T')[0])
             setCliente(proyecto.cliente) */
@@ -124,7 +127,7 @@ const FormularioProyecto = ({tarea}) => {
         }
 
         //pasar los datos a provider
-        await submitProyecto({ id, orden, nombre, direccion, colonia, ciudad, tel, cp, estado, solicitud_fecha, hora, visita_fecha, hora_entrada, hora_salida, reporte_cliente, acciones_realizadas, seguimiento, material_utilizado, comentarios_cliente, firma_pax, firma_cliente, hora_sr, reporto_sr, reportopax_sr, fecha_sr, prioridad })
+        await submitProyecto({ id, orden, nombre, direccion, colonia, ciudad, tel, cp, estado, solicitud_fecha, hora, visita_fecha, hora_entrada, hora_salida, reporte_cliente, acciones_realizadas, seguimiento, material_utilizado, comentarios_cliente, firma_pax, firma_cliente, hora_sr, reporto_sr, reportopax_sr, fecha_sr })
 
         setId(null)
         setOrden('')
@@ -151,7 +154,6 @@ const FormularioProyecto = ({tarea}) => {
         setReporto_sr('')
         setReportopax_sr('')
         setFecha_sr('')
-        setPrioridad('')
         
     }
 
@@ -179,15 +181,12 @@ const FormularioProyecto = ({tarea}) => {
 
     <div className="md:grid grid-cols-3 gap-6">
 
-
-   
-
     
 
         {/* //orden */}
         <div> 
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
-            htmlFor='orden'> 
+            htmlFor='nombre'> 
                 Orden
             </label>
             <input 
@@ -405,7 +404,6 @@ const FormularioProyecto = ({tarea}) => {
             />
         </div>
 
-
     
 
 
@@ -536,10 +534,24 @@ const FormularioProyecto = ({tarea}) => {
         </div>
 
 
+        <SignaturePad
+        onChange={(e) => {
+            uploadImage(e.target.files)
+        }}
+        canvasProps={{
+            className: "border-2 mb-5",
+            width: 800, height: 200,
+        }}
+        >
+
+
+        </SignaturePad>
+
+
 
         
 
-            <div>
+            {/* <div>
             {firma_pax === '' || firma_cliente ?  <p>Firma deshabilitada</p> : 
                  
                  <SignaturePad
@@ -552,7 +564,7 @@ const FormularioProyecto = ({tarea}) => {
                         className: "border-2 mb-5",
                         width: 800, height: 200,
                     }} />}
-            </div>
+            </div> */}
 
               
 
@@ -566,7 +578,7 @@ const FormularioProyecto = ({tarea}) => {
                    
 
                     
-                    
+            {/*  <button onClick={limpiar} className='  bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4  rounded mb-1 2-'>Limpiar Firma</button> */}
                     
                     
                     
@@ -577,33 +589,7 @@ const FormularioProyecto = ({tarea}) => {
         value={id ? 'Actualizar Servicio' : 'Crear Servicio'}
         className='text-center bg-sky-600 w-full p-3 font-bold text-white rounded cursor-pointer hover:bg-sky-700 transition-colors'></input>
 
-            <div>
-            <label
-            className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300 mt-10'
-            htmlFor='prioridad'
-            >
-                Prioridad
-            </label>
-            
-            <select 
-            id='prioridad'
-            type='text'
-            className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md'
-            value={prioridad}
-            onChange={e => setPrioridad(e.target.value)}
-            >
-                <option value="">-- Seleccionar -- </option>
-
-                {PRIORIDAD.map( opcion => (
-                    <option key={opcion}>{opcion}</option>
-                ))}
-
-            </select>
-        </div>
-
     </form>
-
-    <button onClick={limpiar} className='  bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4  rounded mb-1 2-'>Limpiar Firma</button>
 
     {/* <div>
     <h1>IMPRESION DE FIRMA PRUEBA</h1>

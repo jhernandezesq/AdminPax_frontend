@@ -2,6 +2,7 @@ import React from 'react'
 import useProyectos from '../hooks/useProyectos'
 import GeneratePDF from '../components/GeneratePDF'
 import GeneratePDF2 from '../components/GeneratePDF2'
+import GeneratePDF3 from '../components/GeneratePDF3'
 import { formatearFecha } from '../helpers/formatearFecha'
 import {convertTime} from '../helpers/convertTime'
 import {convertTimeDay} from '../helpers/convertTimeDay'
@@ -367,6 +368,7 @@ const Resumen = () => {
   
 
     <GeneratePDF proyecto={proyecto} />
+    <GeneratePDF3 proyecto={proyecto} />
     
 
   </div>

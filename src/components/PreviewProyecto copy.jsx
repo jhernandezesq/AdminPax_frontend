@@ -19,7 +19,7 @@ const PreviewProyecto = ({proyecto}) => {
       )}
       </div>
       
-
+        <button className="bg-red-500">asdasdasdasdasdasd</button>
       <Link to={`${_id}`}
       className='text-gray-600 hover:text-gray-800 text-sm font-bold'
       >Ver Proyecto</Link>

@@ -11,7 +11,9 @@ import {CSVLink} from 'react-csv'
 const Proyectos = () => {
 
   const { proyectos, alerta} = useProyectos()
-  /* console.log(proyectos); */
+ /*  console.log(proyectos); */
+
+
 
 
  
@@ -113,6 +115,10 @@ const csvReport = {
         
         : <p className=" text-center text-gray-600 p-5">no hay proyectos</p>}
       </div>
+
+
+
+     
     </>
   )
 }
