@@ -36,281 +36,134 @@ const Resumen = () => {
   } = proyecto;
 
   return (
-    <div className="grid grid-cols-1 gap-4 place-items-center h-3/4   items-center justify-center bg-gray-200">
-      <div className="bg-white p-8 md:w-[55rem] xl:w-[80rem]">
-        <div className=" flex justify-between">
-          <h2 className="font-bold text-3xl mt-2 text-gray-300">
-            SOLICITUD DE SERVICIO <br></br>
-            <span className="text-red-600"> {nombre}</span>
-          </h2>
+    <div className="grid grid-cols-1 gap-4 place-items-center   items-center justify-center bg-gray-200">
+      <div className="bg-white p-8 w-[22rem] md:w-[70rem] mt-5">
+        <h2 className="font-bold text-3xl  text-gray-300">
+          SOLICITUD DE SERVICIO <br></br>
+          <span className="text-red-600"> {nombre}</span>
+        </h2>
 
-          <h2 className="font-bold text-3xl mt-2 text-right">
-            No. <span className="text-red-600 ">{orden}</span>
-            <br />
-            <p className="text-lg text-gray-400">
-              <span className="mr-5">Fecha Solicitud:</span>{" "}
-              {convertTime(solicitud_fecha)}
-            </p>
-            <p className="text-lg text-gray-400">
-              <span className="mr-28">Hora:</span>
-              {hora_sr} hrs.
-            </p>
-          </h2>
+        <p className="text-right text-3xl font-bold text-red-500 mt-5">
+          {" "}
+          <span className="text-black mr-2">No.</span>
+          {orden}
+        </p>
+
+        <div className="text-right mt-5">
+          <p className="text-gray-500">
+            Fecha Solicitud:{" "}
+            <span className="text-black">{convertTime(solicitud_fecha)}</span>
+          </p>
+          <p className="text-gray-500">
+            Hora: <span className="text-black">{hora_sr}</span> hrs.
+          </p>
         </div>
 
-        <div className="p-9">
-          <div className="flex flex-col mx-0 mt-8 ">
-            <table className="min-w-full divide-y divide-slate-500 ">
-              <thead>
-                <tr>
-                  <th
-                    scope="col"
-                    className="  py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    DIA
-                  </th>
-                  <th
-                    scope="col"
-                    className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    FECHA
-                  </th>
-                  <th
-                    scope="col"
-                    className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    HORA
-                  </th>
-                  <th
-                    scope="col"
-                    className="  py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    TEL
-                  </th>
-                  <th
-                    scope="col"
-                    className=" py-3.5 px-5 text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    DIRECCION
-                  </th>
-                  <th
-                    scope="col"
-                    className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    COLONIA
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-slate-200">
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {convertTimeDay(visita_fecha)}
-                  </td>
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {convertTime(visita_fecha)}
-                  </td>
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {hora}
-                  </td>
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {tel}
-                  </td>
-                  <td className="  py-4 px-5 text-sm text-center text-slate-500 sm:table-cell">
-                    {direccion}
-                  </td>
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {colonia}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+        <div className=" grid gap-2 grid-cols-2"></div>
+
+        <div className="grid gap-4 grid-cols-3 md:grid-cols-6 text-center mt-10">
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 leading-loose">
+            <p className="">DIA</p>
+            <p>{convertTimeDay(visita_fecha)}</p>
           </div>
-          <div className="flex flex-col mx-0 mt-8 ">
-            <table className="min-w-full divide-y divide-slate-500 ">
-              <thead>
-                <tr>
-                  <th
-                    scope="col"
-                    className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    ESTADO
-                  </th>
-                  <th
-                    scope="col"
-                    className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    CIUDAD
-                  </th>
-                  <th
-                    scope="col"
-                    className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    C.P.
-                  </th>
-                  <th
-                    scope="col"
-                    className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    REPORTE CLIENTE
-                  </th>
-                  <th
-                    scope="col"
-                    className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    REPORTO
-                  </th>
-                  <th
-                    scope="col"
-                    className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    REPORTO PAX
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-slate-200">
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {estado}
-                  </td>
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {ciudad}
-                  </td>
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {cp}
-                  </td>
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {reporte_cliente}
-                  </td>
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {reporto_sr}
-                  </td>
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {reportopax_sr}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>FECHA</p>
+            <p>{convertTime(visita_fecha)}</p>
+          </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>HORA</p>
+            <p>{hora}</p>
+          </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>TEL</p>
+            <p>{tel}</p>
+          </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>DIRECCION</p>
+            <p>{direccion}</p>
+          </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>COLONIA</p>
+            <p>{colonia}</p>
+          </div>
+        </div>
+
+        {/* separacion */}
+
+        <div className="grid gap-4 grid-cols-3 md:grid-cols-6 text-center mt-10">
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 leading-loose">
+            <p className="">ESTADO</p>
+            <p>{estado}</p>
+          </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>CIUDAD</p>
+            <p>{ciudad}</p>
+          </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>C.P.</p>
+            <p> {cp}</p>
+          </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>REP. CLIENTE</p>
+            <p>{reporte_cliente}</p>
+          </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>REPORTO</p>
+            <p>{reporto_sr}</p>
+          </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>REPORTO PAX</p>
+            <p>{reportopax_sr}</p>
           </div>
         </div>
 
         <GeneratePDF2 proyecto={proyecto} />
       </div>
 
-      <div className="bg-white p-8 md:w-[55rem] xl:w-[80rem]">
-        <header className="flex font-light text-sm">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="#b91c1c"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-            />
-          </svg>
-          <p>{nombre}</p>
-        </header>
+     
+      <div className="bg-white p-8 w-[22rem] md:w-[70rem] mb-5">
+        <h2 className="font-bold text-3xl  text-gray-300">
+          COMPLEMENTO ORDEN DE SERVICIO <br></br>
+          
+        </h2>
 
-        <div className=" flex justify-between">
-          <h2 className="font-bold text-3xl mt-2">
-            Cliente: <span className="text-red-600">{nombre}</span>
-          </h2>
+        <div className=" grid gap-2 grid-cols-2"></div>
 
-          <h2 className="font-bold text-3xl mt-2">
-            No. <span className="text-red-600">{orden}</span>
-          </h2>
-        </div>
+        <div className="grid gap-4 grid-cols-3 md:grid-cols-6 text-center mt-10">
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 leading-loose">
+            <p className="">SOL. FECHA</p>
+            <p>{convertTime(solicitud_fecha)}</p>
+          </div>
 
-        {/* <div className='flex justify-between'>
-        <div className='mt-5'>
-            <p className='py-.9  text-sm font-normal text-slate-700 sm:pr-6 md:pr-0'>Dirección</p>
-            <p className='py-.9  text-sm font-normal text-slate-700 sm:pr-6 md:pr-0'>{direccion}</p>
-        </div>
-        <div className='mt-5'>
-            <p className='py-.9  text-sm font-normal text-slate-700 sm:pr-6 md:pr-0'>Colonia</p>
-            <p className='py-.9  text-sm font-normal text-slate-700 sm:pr-6 md:pr-0'>{colonia}</p>
-        </div>
-        <div className='mt-5'>
-            <p className='py-.9  text-sm font-normal text-slate-700 sm:pr-6 md:pr-0'>Ciudad</p>
-            <p className='py-.9  text-sm font-normal text-slate-700 sm:pr-6 md:pr-0'>{ciudad}</p>
-        </div>
-        <div className='mt-5'>
-            <p className='py-.9  text-sm font-normal text-slate-700 sm:pr-6 md:pr-0'>Tel</p>
-            <p className='py-.9  text-sm font-normal text-slate-700 sm:pr-6 md:pr-0'>{tel}</p>
-        </div>
-        <div className='mt-5'>
-            <p className='py-.9  text-sm font-normal text-slate-700 sm:pr-6 md:pr-0'>Codigo Postal</p>
-            <p className='py-.9  text-sm font-normal text-slate-700 sm:pr-6 md:pr-0'>{cp}</p>
-        </div>
-        <div className='mt-5'>
-            <p className='py-.9  text-sm font-normal text-slate-700 sm:pr-6 md:pr-0'>Estado</p>
-            <p className='py-.9  text-sm font-normal text-slate-700 sm:pr-6 md:pr-0'>{estado}</p>
-        </div>
-    </div> */}
 
-        <div className="p-9">
-          <div className="flex flex-col mx-0 mt-8 ">
-            <table className="min-w-full divide-y divide-slate-500 ">
-              <thead>
-                <tr>
-                  <th
-                    scope="col"
-                    className="  py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    Solicitud Fecha
-                  </th>
-                  <th
-                    scope="col"
-                    className=" py-3.5 px-5 text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    Hora
-                  </th>
-                  <th
-                    scope="col"
-                    className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    Visita Fecha
-                  </th>
-                  <th
-                    scope="col"
-                    className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    Hora Entrada
-                  </th>
-                  <th
-                    scope="col"
-                    className=" py-3.5  text-center text-sm font-normal text-slate-700 sm:table-cell"
-                  >
-                    Hora Salida
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-slate-200">
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {/* {solicitud_fecha?.split('T')[0]} */}
-                    {convertTime(solicitud_fecha)}
-                  </td>
-                  <td className="  py-4 px-5 text-sm text-center text-slate-500 sm:table-cell">
-                    {hora}
-                  </td>
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {/* {visita_fecha?.split('T')[0]} */}
-                    {convertTime(visita_fecha)}
-                  </td>
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {hora_entrada}
-                  </td>
-                  <td className="  py-4 text-sm text-center text-slate-500 sm:table-cell">
-                    {hora_salida}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>HORA</p>
+            <p>{hora}</p>
+          </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>VISITA FECHA</p>
+            <p>{convertTime(visita_fecha)}</p>
+          </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>HORA ENT.</p>
+            <p>{hora_entrada}</p>
+          </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>HORA SALIDA</p>
+            <p>{hora_salida}</p>
           </div>
         </div>
 
@@ -389,9 +242,12 @@ const Resumen = () => {
           </div>
         </div>
 
+       
+
         <GeneratePDF proyecto={proyecto} />
-        <GeneratePDF3 proyecto={proyecto} />
       </div>
+      
+      
     </div>
   );
 };
