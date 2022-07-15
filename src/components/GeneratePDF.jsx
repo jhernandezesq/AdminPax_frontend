@@ -13,7 +13,7 @@ export default function GeneratePDF({servicios}){
 
     const [printData, setPrintData] = useState([])
     const { proyecto } = useProyectos()
-    const { orden, nombre, direccion, colonia, ciudad, tel, cp, estado, solicitud_fecha, hora, visita_fecha, hora_entrada, hora_salida, reporte_cliente, acciones_realizadas, seguimiento, material_utilizado, comentarios_cliente, firma_pax, firma_cliente } = proyecto
+    const { orden, nombre, direccion, colonia, ciudad, tel, cp, estado, solicitud_fecha, hora, hora_sr, visita_fecha, hora_entrada, hora_salida, reporte_cliente, acciones_realizadas, seguimiento, material_utilizado, comentarios_cliente, firma_pax, firma_cliente } = proyecto
 
 
     useEffect(() => {
@@ -27,7 +27,7 @@ export default function GeneratePDF({servicios}){
         
         const doc = new jsPDF()
 
-        const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1657917432/OSmod4_pu5jm0.png";
+        const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1657924158/OSmod5_jhfn6l.png";
         doc.addImage(imgData, 'JPEG',0,0,210,297, undefined,'FAST');
         /* console.log(imgData) */
 
@@ -35,7 +35,7 @@ export default function GeneratePDF({servicios}){
         doc.text(171, 19, `${dayjs(solicitud_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}`);
         
         
-        doc.text(176, 25, `${hora}`);
+        doc.text(176, 25, `${hora_sr}`);
         doc.text(171, 31, `${dayjs(visita_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}`);
         doc.text(176, 38, `${hora_entrada}`);
         doc.text(176, 44, `${hora_salida}`);
