@@ -6,6 +6,8 @@ import GeneratePDF3 from "../components/GeneratePDF3";
 import { formatearFecha } from "../helpers/formatearFecha";
 import { convertTime } from "../helpers/convertTime";
 import { convertTimeDay } from "../helpers/convertTimeDay";
+import dayjs from 'dayjs';
+import {es} from 'dayjs/locale/es'
 
 const Resumen = () => {
   const { proyecto } = useProyectos();
@@ -37,7 +39,7 @@ const Resumen = () => {
 
   return (
     <div className="grid grid-cols-1 gap-4 place-items-center   items-center justify-center bg-gray-200">
-      <div className="bg-white p-8 w-[22rem] md:w-[70rem] mt-5">
+      <div className="bg-white p-8 w-[22rem] md:w-[50rem] mt-5">
         <h2 className="font-bold text-3xl  text-gray-300">
           SOLICITUD DE SERVICIO <br></br>
           <span className="text-red-600"> {nombre}</span>
@@ -52,7 +54,8 @@ const Resumen = () => {
         <div className="text-right mt-5">
           <p className="text-gray-500">
             Fecha Solicitud:{" "}
-            <span className="text-black">{convertTime(solicitud_fecha)}</span>
+            <span className="text-black">{dayjs(solicitud_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}</span>
+            
           </p>
           <p className="text-gray-500">
             Hora: <span className="text-black">{hora_sr}</span> hrs.
@@ -64,12 +67,12 @@ const Resumen = () => {
         <div className="grid gap-4 grid-cols-3 md:grid-cols-6 text-center mt-10">
           <div className="min-w-full divide-y divide-slate-300 text-gray-500 leading-loose">
             <p className="">DIA</p>
-            <p>{convertTimeDay(visita_fecha)}</p>
+            <p>{dayjs(visita_fecha).locale("es").add(1, 'day').format("dddd")}</p>
           </div>
 
           <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
-            <p>FECHA</p>
-            <p>{convertTime(visita_fecha)}</p>
+            <p>VISITA FECHA</p>
+            <p>{dayjs(visita_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}</p>
           </div>
 
           <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
@@ -131,7 +134,7 @@ const Resumen = () => {
       </div>
 
      
-      <div className="bg-white p-8 w-[22rem] md:w-[70rem] mb-5">
+      <div className="bg-white p-8 w-[22rem] md:w-[50rem] mb-5">
         <h2 className="font-bold text-3xl  text-gray-300">
           COMPLEMENTO ORDEN DE SERVICIO <br></br>
           
@@ -142,18 +145,18 @@ const Resumen = () => {
         <div className="grid gap-4 grid-cols-3 md:grid-cols-6 text-center mt-10">
           <div className="min-w-full divide-y divide-slate-300 text-gray-500 leading-loose">
             <p className="">SOL. FECHA</p>
-            <p>{convertTime(solicitud_fecha)}</p>
+            <p>{dayjs(solicitud_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}</p>
           </div>
 
 
           <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
             <p>HORA</p>
-            <p>{hora}</p>
+            <p>{hora_sr}</p>
           </div>
 
           <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
             <p>VISITA FECHA</p>
-            <p>{convertTime(visita_fecha)}</p>
+            <p>{dayjs(visita_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}</p>
           </div>
 
           <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
@@ -161,7 +164,7 @@ const Resumen = () => {
             <p>{hora_entrada}</p>
           </div>
 
-          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose mb-10">
             <p>HORA SALIDA</p>
             <p>{hora_salida}</p>
           </div>
@@ -203,7 +206,7 @@ const Resumen = () => {
           <div>
             <h3 className="font-bold text-xl mt-8 text-gray-600">
               {" "}
-              reporte cliente{" "}
+              comentario del cliente{" "}
             </h3>
             <p className="font-light"> {comentarios_cliente}</p>
           </div>
@@ -224,7 +227,7 @@ const Resumen = () => {
                     scope="col"
                     className=" inline  text-sm font-normal text-slate-700 sm:table-cell "
                   >
-                    <img className="inline mb-2" src={firma_cliente} alt="" />
+                    <img className="inline mb-2 h-32" src={firma_cliente} alt="" />
                   </th>
                 </tr>
               </thead>

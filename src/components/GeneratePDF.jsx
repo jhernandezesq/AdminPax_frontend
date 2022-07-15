@@ -1,8 +1,9 @@
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import {useState, useEffect} from 'react'
-import useProyectos from '../hooks/useProyectos'
-import { formatearFecha } from '../helpers/formatearFecha'
+import useProyectos from "../hooks/useProyectos";
+import dayjs from 'dayjs';
+import {es} from 'dayjs/locale/es'
 
 
 
@@ -26,59 +27,62 @@ export default function GeneratePDF({servicios}){
         
         const doc = new jsPDF()
 
-        const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1655846613/OS_ca23ro.png";
+        const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1657917432/OSmod4_pu5jm0.png";
         doc.addImage(imgData, 'JPEG',0,0,210,297, undefined,'FAST');
-        console.log(imgData)
+        /* console.log(imgData) */
 
         doc.setFontSize(8);
-        doc.text(168, 19, `${formatearFecha(solicitud_fecha)}`);
+        doc.text(171, 19, `${dayjs(solicitud_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}`);
+        
         
         doc.text(176, 25, `${hora}`);
-        doc.text(168, 31, `${formatearFecha(visita_fecha)}`);
+        doc.text(171, 31, `${dayjs(visita_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}`);
         doc.text(176, 38, `${hora_entrada}`);
         doc.text(176, 44, `${hora_salida}`);
 
         
         
         doc.setFontSize(8);
-        doc.text(45, 82, `${nombre}`);
-        doc.text(40, 90, `${direccion}`);
-        doc.text(30, 99, `${colonia}`);
-        doc.text(30, 108, `${ciudad}`);
-        doc.text(130, 108, `${estado}`);
-        doc.text(170, 108, `${cp}`);
-        doc.text(35, 116, `${tel}`);
+        doc.text(45, 77, `${nombre}`);
+        doc.text(40, 85, `${direccion}`);
+        doc.text(30, 94, `${colonia}`);
+        doc.text(30, 102, `${ciudad}`);
+        doc.text(130, 102, `${estado}`);
+        doc.text(170, 102, `${cp}`);
+        doc.text(35, 111, `${tel}`);
 
 
-        const rCliente = doc.splitTextToSize(`${reporte_cliente}`, 152)
-        doc.text(rCliente, 45, 139, { lineHeightFactor: 2.3 }  )
+        const rCliente = doc.splitTextToSize(`${reporte_cliente}`, 180)
+        doc.text(rCliente, 15, 133, { lineHeightFactor: 2.3 }  )
          
 
-        const aRealizadas = doc.splitTextToSize(`${acciones_realizadas}`, 152)
-        doc.text(aRealizadas, 45, 158, { lineHeightFactor: 2.3 }  )
+        const aRealizadas = doc.splitTextToSize(`${acciones_realizadas}`, 180)
+        doc.text(aRealizadas, 15, 157, { lineHeightFactor: 2.3 }  )
 
-        const aSeguimiento = doc.splitTextToSize(`${seguimiento}`, 145)
-        doc.text(aSeguimiento, 52, 176, { lineHeightFactor: 2.3 }  )
+        const aSeguimiento = doc.splitTextToSize(`${seguimiento}`, 180)
+        doc.text(aSeguimiento, 15, 194, { lineHeightFactor: 2.3 }  )
 
-        const mUtilizado = doc.splitTextToSize(`${material_utilizado}`, 145)
-        doc.text(mUtilizado, 52, 195, { lineHeightFactor: 2.3 }  )  
+        const cCliente = doc.splitTextToSize(`${comentarios_cliente}`, 180)
+        doc.text(cCliente, 15, 212, { lineHeightFactor: 2.3 }  )
 
-        const cCliente = doc.splitTextToSize(`${comentarios_cliente}`, 145)
-        doc.text(cCliente, 52, 215, { lineHeightFactor: 2.3 }  )
+        const mUtilizado = doc.splitTextToSize(`${material_utilizado}`, 180)
+        doc.text(mUtilizado, 15, 230, { lineHeightFactor: 2.3 }  )  
+
+        
 
         
         
        
-        doc.text(55, 248, `${firma_pax}`);
+        doc.text(55, 264, `${firma_pax}`);
        
 
         const firma = `${firma_cliente}`;
-        doc.addImage(firma, 'JPEG',149,240,16,7, undefined,'FAST');
-        console.log(firma)
+        doc.addImage(firma, 'JPEG',149,256,16,7, undefined,'FAST');
+        /* console.log(firma) */
 
         doc.setTextColor(255,0,0);
         doc.setFontSize(20);
-        doc.text(175, 73, `${orden}`);
+        doc.text(173, 67, `${orden}`);
         
         
 

@@ -2,8 +2,8 @@ import jsPDF from "jspdf";
 import "jspdf-autotable";
 import {useState, useEffect} from 'react'
 import useProyectos from '../hooks/useProyectos'
-import { formatearFecha } from '../helpers/formatearFecha'
-import { convertTimeDay } from '../helpers/convertTimeDay'
+import dayjs from 'dayjs';
+import {es} from 'dayjs/locale/es'
 
 
 
@@ -28,15 +28,15 @@ export default function GeneratePDF2({servicios}){
 
         const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1655914955/SSv2_iqqdfk.png";
         doc.addImage(imgData, 'JPEG',0,0,210,112, undefined,'FAST');
-        console.log(imgData)
+        /* console.log(imgData) */
 
         doc.setFontSize(8);
-        doc.text(165, 22, `${formatearFecha(solicitud_fecha)}`);
+        doc.text(168, 22, `${dayjs(solicitud_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}`);
         
-        doc.text(173, 28, `${hora}`);
-        doc.text(110, 42, `${formatearFecha(visita_fecha)}`);
-        doc.text(62, 42, `${convertTimeDay(visita_fecha)}`);
-        doc.text(176, 42, `${hora_sr}`);
+        doc.text(173, 28, `${hora_sr}`);
+        doc.text(62, 42, `${dayjs(visita_fecha).locale("es").add(1, 'day').format("dddd")}`);
+        doc.text(114, 42, `${dayjs(visita_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}`);
+        doc.text(176, 42, `${hora}`);
        
 
         

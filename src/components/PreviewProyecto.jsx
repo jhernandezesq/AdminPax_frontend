@@ -1,11 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import { PaperClipIcon } from "@heroicons/react/solid";
-import { formatearFecha } from "../helpers/formatearFecha";
-import { convertTime } from "../helpers/convertTime";
+
+
+
+import dayjs from 'dayjs';
+import {es} from 'dayjs/locale/es'
+
+
+
+
+
+
 
 const PreviewProyecto = ({ proyecto }) => {
+
+  
+
   const { auth } = useAuth();
   const {
     nombre,
@@ -19,6 +30,8 @@ const PreviewProyecto = ({ proyecto }) => {
     prioridad,
   } = proyecto;
 
+  
+
   return (
     <>
       <div className="grid gap-3 grid-cols-2 md:grid-cols-3 border-b p-5 bg-white rounded-lg mb-1">
@@ -29,7 +42,24 @@ const PreviewProyecto = ({ proyecto }) => {
           <span className="text-sm text-gray-500 mr-10 ">{nombre}</span>
           </div>
 
-          <span className="  text-xs md:text-sm text-gray-500 	">Solicitud: {convertTime(solicitud_fecha)}</span>
+          {/* <span className="  text-xs md:text-sm text-gray-500 	">Solicitud: {moment(solicitud_fecha).add(1, 'days').locale('mx').format('LL')}</span> */}
+         
+          
+          {/* <span className="  text-xs md:text-sm text-gray-500 	">Solicitud: {format(parseISO(solicitud_fecha), 'dd-MM-yyyy')}</span> */}
+          {/* <span className="  text-xs md:text-sm text-gray-500 	">Solicitud: {format(new Date(solicitud_fecha), 'M/d/yyyy')}</span>
+          <span className="  text-xs md:text-sm text-gray-500 	">Solicitud: {format(new Date(solicitud_fecha), "yyyy-MM-dd HH:mm z")}</span> */}
+
+          {/* <h1>{format(new Date(solicitud_fecha), 'dd/MM/yyy')}</h1> */}
+          
+          <h1></h1>
+          <span className="text-xs md:text-sm text-gray-500">Fecha Solicitud: {dayjs(solicitud_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}</span>
+          
+
+          
+          
+
+          
+          
             
           
 

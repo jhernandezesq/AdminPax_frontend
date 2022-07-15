@@ -28,7 +28,7 @@ export default function GeneratePDF3({servicios}){
 
         const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1656439558/OS3_fgvdid.png";
         doc.addImage(imgData, 'JPEG',0,0,210,297, undefined,'FAST');
-        console.log(imgData)
+        /* console.log(imgData) */
 
         doc.setFontSize(8);
         doc.text(15, 57, `${formatearFecha(solicitud_fecha)}`);
@@ -74,7 +74,7 @@ export default function GeneratePDF3({servicios}){
 
         const firma = `${firma_cliente}`;
         doc.addImage(firma, 'JPEG',149,240,16,7, undefined,'FAST');
-        console.log(firma)
+        /* console.log(firma) */
 
         doc.setTextColor(255,0,0);
         doc.setFontSize(20);
