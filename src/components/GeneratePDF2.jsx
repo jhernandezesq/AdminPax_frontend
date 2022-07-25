@@ -12,7 +12,7 @@ export default function GeneratePDF2({servicios}){
 
     const [printData, setPrintData] = useState([])
     const { proyecto } = useProyectos()
-    const { orden, nombre, direccion, colonia, ciudad, tel, cp, estado, solicitud_fecha, hora, visita_fecha, hora_entrada, hora_salida, reporte_cliente, acciones_realizadas, seguimiento, material_utilizado, comentarios_cliente, firma_pax, firma_cliente, hora_sr, reporto_sr, reportopax_sr } = proyecto
+    const { orden, nombre, direccion, numero, interior, colonia, ciudad, tel, cp, estado, solicitud_fecha, hora, visita_fecha, hora_entrada, hora_salida, reporte_cliente, acciones_realizadas, seguimiento, material_utilizado, comentarios_cliente, firma_pax, firma_cliente, hora_sr, reporto_sr, reportopax_sr } = proyecto
 
 
     useEffect(() => {
@@ -44,7 +44,7 @@ export default function GeneratePDF2({servicios}){
         doc.setFontSize(8);
         doc.text(40, 57, `${nombre}`);
         doc.text(152, 57, `${tel}`);
-        doc.text(40, 65, `${direccion}`);
+        doc.text(40, 65, `${direccion} ${numero} ${interior}`);
         doc.text(130, 73, `${ciudad}`);
         doc.text(40, 73, `${colonia}`);
         doc.text(184, 73, `${cp}`);

@@ -14,6 +14,10 @@ const FormularioProyecto = ({tarea}) => {
     const [orden, setOrden] = useState('')
     const [nombre, setNombre] = useState('')
     const [direccion, setDireccion] = useState('')
+    
+    const [numero, setNumero] = useState('')
+    const [interior, setInterior] = useState('')
+
     const [colonia, setColonia] = useState('')
     const [ciudad, setCiudad] = useState('')
     const [tel, setTel] = useState('')
@@ -21,7 +25,10 @@ const FormularioProyecto = ({tarea}) => {
     const [estado, setEstado] = useState('')
     const [solicitud_fecha, setSolicitud_fecha] = useState('')
     const [hora, setHora] = useState('')
+
     const [visita_fecha, setVisita_fecha] = useState('')
+    const [visita_fecha_servicios, setVisita_fecha_servicios] = useState('')
+
     const [hora_entrada, setHora_entrada] = useState('')
     const [hora_salida, setHora_salida] = useState('')
     const [reporte_cliente, setReporte_cliente] = useState('')
@@ -65,6 +72,10 @@ const FormularioProyecto = ({tarea}) => {
             setOrden(proyecto.orden)
             setNombre(proyecto.nombre)
             setDireccion(proyecto.direccion)
+
+            setNumero(proyecto.numero)
+            setInterior(proyecto.interior)
+
             setColonia(proyecto.colonia)
             setCiudad(proyecto.ciudad)
             setTel(proyecto.tel)
@@ -72,7 +83,10 @@ const FormularioProyecto = ({tarea}) => {
             setEstado(proyecto.estado)
             setSolicitud_fecha(proyecto.solicitud_fecha?.split('T')[0])
             setHora(proyecto.hora)
+
             setVisita_fecha(proyecto.visita_fecha?.split('T')[0])
+            setVisita_fecha_servicios(proyecto.visita_fecha_servicios?.split('T')[0])
+
             setHora_entrada(proyecto.hora_entrada)
             setHora_salida(proyecto.hora_salida)
             setReporte_cliente(proyecto.reporte_cliente)
@@ -124,12 +138,17 @@ const FormularioProyecto = ({tarea}) => {
         }
 
         //pasar los datos a provider
-        await submitProyecto({ id, orden, nombre, direccion, colonia, ciudad, tel, cp, estado, solicitud_fecha, hora, visita_fecha, hora_entrada, hora_salida, reporte_cliente, acciones_realizadas, seguimiento, material_utilizado, comentarios_cliente, firma_pax, firma_cliente, hora_sr, reporto_sr, reportopax_sr, fecha_sr, prioridad })
+        await submitProyecto({ id, orden, nombre, direccion, numero, interior ,colonia, ciudad, tel, cp, estado, solicitud_fecha, hora, visita_fecha, visita_fecha_servicios, hora_entrada, hora_salida, reporte_cliente, acciones_realizadas, seguimiento, material_utilizado, comentarios_cliente, firma_pax, firma_cliente, hora_sr, reporto_sr, reportopax_sr, fecha_sr, prioridad })
 
         setId(null)
         setOrden('')
         setNombre('')
         setDireccion('')
+
+        setNumero('')
+        setInterior('')
+        setVisita_fecha_servicios('')
+
         setColonia('')
         setCiudad('')
         setTel('')
@@ -203,7 +222,7 @@ const FormularioProyecto = ({tarea}) => {
         <div>
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
             htmlFor='solicitud_fecha'>
-                Solicitud Fecha
+                Solicitud Fecha 
             </label>
             <input 
             id='solicitud_fecha'
@@ -216,11 +235,11 @@ const FormularioProyecto = ({tarea}) => {
         {/* //Hora Solicitud */}
         <div>
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
-            htmlFor='hora'>
+            htmlFor='hora_sr'>
                 Hora Solicitud Servicio
             </label>
             <input 
-            id='hora'
+            id='hora_sr'
             type="time" 
             className='bg-gray-50 border border-gray-300 text-gray-900 md:text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
             value={hora_sr}
@@ -231,7 +250,7 @@ const FormularioProyecto = ({tarea}) => {
         <div>
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
             htmlFor='visita_fecha'>
-                Visita Fecha
+                Visita Fecha Promesa
             </label>
             <input 
             id='visita_fecha'
@@ -287,11 +306,12 @@ const FormularioProyecto = ({tarea}) => {
             onChange={e => setTel(e.target.value)}
             />
         </div>
+
         {/* direccion */}
         <div>
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
             htmlFor='direccion'>
-                Direccion
+                Dirección
             </label>
             <input 
             id='direccion'
@@ -302,8 +322,42 @@ const FormularioProyecto = ({tarea}) => {
             onChange={e => setDireccion(e.target.value)}
             />
         </div>
+
+        <div>
+            <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
+            htmlFor='numero'>
+                Número
+            </label>
+            <input 
+            id='numero'
+            type="text" 
+            className='bg-gray-50 border border-gray-300 text-gray-900 md:text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' 
+            placeholder='numero'
+            value={numero}
+            onChange={e => setNumero(e.target.value)}
+            />
+        </div>
+
+        <div>
+            <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
+            htmlFor='interior'>
+                Interior
+            </label>
+            <input 
+            id='interior'
+            type="text" 
+            className='bg-gray-50 border border-gray-300 text-gray-900 md:text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' 
+            placeholder='interior'
+            value={interior}
+            onChange={e => setInterior(e.target.value)}
+            />
+        </div>
+
+
+
+
             {/* colonia */}
-            <div>
+        <div>
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
             htmlFor='colonia'>
                 Colonia
@@ -337,7 +391,7 @@ const FormularioProyecto = ({tarea}) => {
         <div>
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
             htmlFor='cp'>
-                Codigo Postal
+                Código Postal
             </label>
             <input 
             id='cp'
@@ -449,7 +503,19 @@ const FormularioProyecto = ({tarea}) => {
      <div className="grid gap-6 mb-6 lg:grid-cols-3  mt-10">
 
   
-        
+     <div>
+            <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
+            htmlFor='visita_fecha_servicios'>
+                Visita Fecha
+            </label>
+            <input 
+            id='visita_fecha_servicios'
+            type="date" 
+            className='bg-gray-50 border border-gray-300 text-gray-900 md:text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+            value={visita_fecha_servicios}
+            onChange={e => setVisita_fecha_servicios(e.target.value)}
+            />
+        </div>
 
 
 
@@ -466,6 +532,7 @@ const FormularioProyecto = ({tarea}) => {
             onChange={e => setHora_entrada(e.target.value)}
             />
         </div>
+
         <div>
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"'
             htmlFor='hora_salida'>

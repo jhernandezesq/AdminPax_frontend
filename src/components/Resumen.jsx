@@ -15,14 +15,19 @@ const Resumen = () => {
     orden,
     nombre,
     direccion,
+    numero,
+    interior,
     colonia,
     ciudad,
     tel,
     cp,
     estado,
     solicitud_fecha,
+    
     hora,
     visita_fecha,
+    visita_fecha_servicios,
+
     hora_entrada,
     hora_salida,
     reporte_cliente,
@@ -64,14 +69,14 @@ const Resumen = () => {
 
         <div className=" grid gap-2 grid-cols-2"></div>
 
-        <div className="grid gap-4 grid-cols-3 md:grid-cols-6 text-center mt-10">
+        <div className="grid gap-4 grid-cols-3 md:grid-cols-8 text-center mt-10">
           <div className="min-w-full divide-y divide-slate-300 text-gray-500 leading-loose">
             <p className="">DIA</p>
             <p>{dayjs(visita_fecha).locale("es").add(1, 'day').format("dddd")}</p>
           </div>
 
           <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
-            <p>VISITA FECHA</p>
+            <p>F. PROMESA</p>
             <p>{dayjs(visita_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}</p>
           </div>
 
@@ -94,6 +99,17 @@ const Resumen = () => {
             <p>COLONIA</p>
             <p>{colonia}</p>
           </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>NUMERO</p>
+            <p>{numero}</p>
+          </div>
+
+          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
+            <p>INTERIOR</p>
+            <p>{interior}</p>
+          </div>
+
         </div>
 
         {/* separacion */}
@@ -144,20 +160,11 @@ const Resumen = () => {
 
         <div className="grid gap-4 grid-cols-3 md:grid-cols-6 text-center mt-10">
           <div className="min-w-full divide-y divide-slate-300 text-gray-500 leading-loose">
-            <p className="">SOL. FECHA</p>
-            <p>{dayjs(solicitud_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}</p>
+            <p className="">VISITA FECHA</p>
+            <p>{dayjs(visita_fecha_servicios).locale("es").add(1, 'day').format("DD MMMM YYYY")}</p>
           </div>
 
 
-          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
-            <p>HORA</p>
-            <p>{hora_sr}</p>
-          </div>
-
-          <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
-            <p>VISITA FECHA</p>
-            <p>{dayjs(visita_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}</p>
-          </div>
 
           <div className="min-w-full divide-y divide-slate-300 text-gray-500 ml-[-15px] leading-loose">
             <p>HORA ENT.</p>

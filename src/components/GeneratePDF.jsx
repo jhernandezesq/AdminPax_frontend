@@ -13,7 +13,7 @@ export default function GeneratePDF({servicios}){
 
     const [printData, setPrintData] = useState([])
     const { proyecto } = useProyectos()
-    const { orden, nombre, direccion, colonia, ciudad, tel, cp, estado, solicitud_fecha, hora, hora_sr, visita_fecha, hora_entrada, hora_salida, reporte_cliente, acciones_realizadas, seguimiento, material_utilizado, comentarios_cliente, firma_pax, firma_cliente } = proyecto
+    const { orden, nombre, direccion, numero, interior ,colonia, ciudad, tel, cp, estado, solicitud_fecha, hora, hora_sr, visita_fecha, visita_fecha_servicios, hora_entrada, hora_salida, reporte_cliente, acciones_realizadas, seguimiento, material_utilizado, comentarios_cliente, firma_pax, firma_cliente } = proyecto
 
 
     useEffect(() => {
@@ -36,7 +36,7 @@ export default function GeneratePDF({servicios}){
         
         
         doc.text(176, 25, `${hora_sr}`);
-        doc.text(171, 31, `${dayjs(visita_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}`);
+        doc.text(171, 31, `${dayjs(visita_fecha_servicios).locale("es").add(1, 'day').format("DD MMMM YYYY")}`);
         doc.text(176, 38, `${hora_entrada}`);
         doc.text(176, 44, `${hora_salida}`);
 
@@ -45,6 +45,10 @@ export default function GeneratePDF({servicios}){
         doc.setFontSize(8);
         doc.text(45, 77, `${nombre}`);
         doc.text(40, 85, `${direccion}`);
+        doc.text(131, 85, `${numero}`);
+        doc.text(174, 85, `${interior}`);
+
+
         doc.text(30, 94, `${colonia}`);
         doc.text(30, 102, `${ciudad}`);
         doc.text(130, 102, `${estado}`);
