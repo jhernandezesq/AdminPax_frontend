@@ -26,37 +26,42 @@ export default function GeneratePDF2({servicios}){
         
         const doc = new jsPDF('l', 'mm', [210, 112])
 
-        const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1655914955/SSv2_iqqdfk.png";
+        const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1659365503/solicitudServicio_bmpeod.png";
         doc.addImage(imgData, 'JPEG',0,0,210,112, undefined,'FAST');
         /* console.log(imgData) */
 
         doc.setFontSize(8);
-        doc.text(168, 22, `${dayjs(solicitud_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}`);
+        doc.text(168, 19, `${dayjs(solicitud_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}`);
         
-        doc.text(173, 28, `${hora_sr}`);
-        doc.text(62, 42, `${dayjs(visita_fecha).locale("es").add(1, 'day').format("dddd")}`);
-        doc.text(114, 42, `${dayjs(visita_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}`);
-        doc.text(176, 42, `${hora}`);
+        doc.text(173, 24, `${hora_sr}`);
+        doc.text(62, 37, `${dayjs(visita_fecha).locale("es").add(1, 'day').format("dddd")}`);
+        doc.text(114, 37, `${dayjs(visita_fecha).locale("es").add(1, 'day').format("DD MMMM YYYY")}`);
+        doc.text(176, 37, `${hora}`);
        
 
         
         
         doc.setFontSize(8);
-        doc.text(40, 57, `${nombre}`);
-        doc.text(152, 57, `${tel}`);
-        doc.text(40, 65, `${direccion} ${numero} ${interior}`);
-        doc.text(130, 73, `${ciudad}`);
-        doc.text(40, 73, `${colonia}`);
-        doc.text(184, 73, `${cp}`);
-        doc.text(40, 80, `${estado}`);
-        doc.text(40, 88, `${reporte_cliente}`);
-        doc.text(40, 96, `${reporto_sr}`);
-        doc.text(40, 104, `${reportopax_sr}`);
+        doc.text(40, 50, `${nombre}`);
+        doc.text(152, 50, `${tel}`);
+        doc.text(40, 57, `${direccion} ${numero} ${interior}`);
+        doc.text(130, 64, `${ciudad}`);
+        doc.text(40, 64, `${colonia}`);
+        doc.text(184, 64, `${cp}`);
+        doc.text(40, 71, `${estado}`);
+
+        /* doc.text(40, 88, `${reporte_cliente}`); */
+
+        const rCliente = doc.splitTextToSize(`${reporte_cliente}`, 160)
+        doc.text(rCliente, 40, 78, { lineHeightFactor: 2.3 }  )
+
+        doc.text(40, 98, `${reporto_sr}`);
+        doc.text(40, 105, `${reportopax_sr}`);
       
 
         doc.setTextColor(255,0,0);
         doc.setFontSize(18);
-        doc.text(184, 15, `${orden}`);
+        doc.text(184, 13, `${orden}`);
   
         
 
