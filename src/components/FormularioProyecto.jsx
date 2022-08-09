@@ -212,7 +212,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='orden'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5' 
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5' 
             placeholder='orden'
             value={orden}
             onChange={e => setOrden(e.target.value)}
@@ -227,7 +227,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='solicitud_fecha'
             type="date" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             value={solicitud_fecha}
             onChange={e => setSolicitud_fecha(e.target.value)}
             />
@@ -241,7 +241,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='hora_sr'
             type="time" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             value={hora_sr}
             onChange={e => setHora_sr(e.target.value)}
             />
@@ -255,7 +255,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='visita_fecha'
             type="date" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             value={visita_fecha}
             onChange={e => setVisita_fecha(e.target.value)}
             />
@@ -269,7 +269,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='hora'
             type="time" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             value={hora}
             onChange={e => setHora(e.target.value)}
             />
@@ -285,7 +285,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='nombre'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'            
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'            
             placeholder='nombre'
             value={nombre}
             onChange={e => setNombre(e.target.value)}
@@ -300,7 +300,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='tel'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'            
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'            
             placeholder='Tel'
             value={tel}
             onChange={e => setTel(e.target.value)}
@@ -316,7 +316,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='direccion'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             placeholder='direccion'
             value={direccion}
             onChange={e => setDireccion(e.target.value)}
@@ -331,7 +331,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='numero'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'            
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'            
             placeholder='numero'
             value={numero}
             onChange={e => setNumero(e.target.value)}
@@ -346,7 +346,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='interior'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'            
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'            
             placeholder='interior'
             value={interior}
             onChange={e => setInterior(e.target.value)}
@@ -365,7 +365,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='colonia'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'            
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'            
             placeholder='colonia'
             value={colonia}
             onChange={e => setColonia(e.target.value)}
@@ -380,7 +380,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='ciudad'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'            
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'            
             placeholder='ciudad'
             value={ciudad}
             onChange={e => setCiudad(e.target.value)}
@@ -396,7 +396,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='cp'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'            
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'            
             placeholder='CP'
             value={cp}
             onChange={e => setCp(e.target.value)}
@@ -410,7 +410,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='estado'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'            
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'            
             placeholder='Estado'
             value={estado}
             onChange={e => setEstado(e.target.value)}
@@ -425,7 +425,7 @@ const FormularioProyecto = ({tarea}) => {
             <textarea 
             id='reporte_cliente'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             value={reporte_cliente}
             onChange={e => setReporte_cliente(e.target.value)}
             />
@@ -439,7 +439,7 @@ const FormularioProyecto = ({tarea}) => {
             <textarea 
             id='reporto'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             value={reporto_sr}
             onChange={e => setReporto_sr(e.target.value)}
             />
@@ -453,7 +453,7 @@ const FormularioProyecto = ({tarea}) => {
             <textarea 
             id='reportopax_sr'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             value={reportopax_sr}
             onChange={e => setReportopax_sr(e.target.value)}
             />
@@ -470,7 +470,7 @@ const FormularioProyecto = ({tarea}) => {
             <select 
             id='prioridad'
             type='text'
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             value={prioridad}
             onChange={e => setPrioridad(e.target.value)}
             >
@@ -511,7 +511,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='visita_fecha_servicios'
             type="date" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             value={visita_fecha_servicios}
             onChange={e => setVisita_fecha_servicios(e.target.value)}
             />
@@ -527,7 +527,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='hora_entrada'
             type="time" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             value={hora_entrada}
             onChange={e => setHora_entrada(e.target.value)}
             />
@@ -541,7 +541,7 @@ const FormularioProyecto = ({tarea}) => {
             <input 
             id='hora_salida'
             type="time" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             value={hora_salida}
             onChange={e => setHora_salida(e.target.value)}
             />
@@ -557,7 +557,7 @@ const FormularioProyecto = ({tarea}) => {
             <textarea 
             id='acciones_realizadas'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             value={acciones_realizadas}
             onChange={e => setAcciones_realizadas(e.target.value)}
             />
@@ -573,7 +573,7 @@ const FormularioProyecto = ({tarea}) => {
                 <textarea 
                 id='seguimiento'
                 type="text" 
-                className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+                className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
                 value={seguimiento}
                 onChange={e => setSeguimiento(e.target.value)}
                 />
@@ -588,7 +588,7 @@ const FormularioProyecto = ({tarea}) => {
                 <textarea 
                 id='material_utilizado'
                 type="text" 
-                className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+                className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
                 value={material_utilizado}
                 onChange={e => setMaterial_utilizado(e.target.value)}
                 />
@@ -602,7 +602,7 @@ const FormularioProyecto = ({tarea}) => {
                 <textarea 
                 id='comentarios_cliente'
                 type="text" 
-                className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+                className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
                 value={comentarios_cliente}
                 onChange={e => setComentarios_cliente(e.target.value)}
                 />
@@ -616,7 +616,7 @@ const FormularioProyecto = ({tarea}) => {
             <textarea 
             id='firma_pax'
             type="text" 
-            className='bg-gray-50 border border-gray-300 text-red-500  text-sm rounded-lg  block w-full p-2.5'
+            className='bg-gray-50 border border-gray-300 text-black  text-sm rounded-lg  block w-full p-2.5'
             value={firma_pax}
             onChange={e => setFirma_pax(e.target.value)}
             />
