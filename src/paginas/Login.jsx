@@ -52,8 +52,8 @@ const Login = () => {
         <div className="bg-fondo-pax lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" /* style="background-image: url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80);" */>
             <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
             <div className="w-full px-24 z-10">
-                <h1 className="font-body text-7xl font-bold text-left tracking-wide">Celebrando</h1>
-                <h1 className="font-body text-7xl font-bold text-left tracking-wide">Los Sentidos</h1>
+                <h1 className="font-body text-6xl font-bold text-left tracking-wide">Celebrando</h1>
+                <h1 className="font-body text-6xl font-bold text-left tracking-wide">Los Sentidos</h1>
                 
             </div>
              <div className=" bottom-0 absolute p-4 text-center right-0 left-0 flex justify-center space-x-4">
