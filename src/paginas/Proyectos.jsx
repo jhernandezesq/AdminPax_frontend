@@ -102,7 +102,7 @@ const csvReport = {
 
       </div>
       
-      <div className="mt-10 ">
+      <div className="mt-10 ">{/* h-5/6 overflow-y-scroll */}
         {/* SE REMPLAZO EL proyecto POR DATA para QUE FUNCIONARA EL METODO DE FILTRAR */}
         {data.length ? 
         data.filter(searchingTerm(term)).sort((a,b) => a.orden < b.orden ? 1 : -1).map(proyecto => (
