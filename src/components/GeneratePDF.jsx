@@ -27,7 +27,8 @@ export default function GeneratePDF({servicios}){
         
         const doc = new jsPDF()
 
-        const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1657924158/OSmod5_jhfn6l.png";
+        /* const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1657924158/OSmod5_jhfn6l.png"; */
+        const imgData = "https://res.cloudinary.com/dja0jtruu/image/upload/v1710182517/OS_hs9u10.png";
         doc.addImage(imgData, 'JPEG',0,0,210,297, undefined,'FAST');
         /* console.log(imgData) */
 

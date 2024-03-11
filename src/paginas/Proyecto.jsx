@@ -6,6 +6,7 @@ import ModalEliminarTarea from "../components/ModalEliminarTarea";
 import Tarea from "../components/Tarea";
 import Alerta from "../components/Alerta";
 import Resumen from "../components/Resumen";
+import Swal from 'sweetalert2'
 
 import io from "socket.io-client";
 
@@ -37,6 +38,8 @@ const Proyecto = () => {
       elimarProyecto(params.id);
     }
   };
+
+
 
   //useEffect de socketio
   useEffect(() => {
